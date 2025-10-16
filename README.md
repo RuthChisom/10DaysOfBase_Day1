@@ -64,3 +64,7 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+BASE_SEPOLIA_RPC_URL : https://dashboard.alchemy.com/apps/
+ETHERSCAN_API : https://etherscan.io/apidashboard
+Base Sepolia testnet : https://console.optimism.io/faucet
