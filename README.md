@@ -65,6 +65,18 @@ $ anvil --help
 $ cast --help
 ```
 
+```
 BASE_SEPOLIA_RPC_URL : https://dashboard.alchemy.com/apps/
+```
 ETHERSCAN_API : https://etherscan.io/apidashboard
+```
 Base Sepolia testnet : https://console.optimism.io/faucet
+```
+DEPLOY
+```
+
+forge create "src/Greeting.sol:Greeter" --rpc-url "$BASE_SEPOLIA_RPC_URL" --broadcast --private-key "$PRIVATE_KEY" --constructor-args "Hello Base Builders"
+
+VERIFY
+
+forge verify-contract --chain base-sepolia "0x81AeC0B87CAa631365B0AC0B628A84afdf6f1Fe9" "src/Greeting.sol:Greeter" --verifier etherscan --etherscan-api-key "$ETHERSCAN_API" --constructor-args "$(cast abi-encode 'constructor(string)' 'Hello Builders')"
